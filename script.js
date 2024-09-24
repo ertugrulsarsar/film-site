@@ -2,16 +2,16 @@ const arrows = document.querySelectorAll(".arrow");
 const movieList = document.querySelectorAll(".movie-list");
 
 arrows.forEach((arrow, i) => {
-  const widthRatio = Math.floor(window.innerWidth / 300);
+  const widthRatio = Math.floor(window.innerWidth / 270);
   console.log(Math.floor(window.innerWidth / 300));
 
   let clickCounter = 0;
   const imageItem = movieList[i].querySelectorAll("img").length;
   arrow.addEventListener("click", function () {
     clickCounter++;
-    if (imageItem - (4 + clickCounter) + widthRatio >=0 ) {
+    if (imageItem - (5 + clickCounter) + (6 - clickCounter) >=0 ) {
       movieList[i].style.transform = `translateX(${
-        movieList[i].computedStyleMap().get("transform")[0].x.value - 300
+        movieList[i].computedStyleMap().get("transform")[0].x.value - 270
       }px)`;
     } else {
       movieList[i].style.transform = "translateX(0)";
